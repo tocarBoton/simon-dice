@@ -1,0 +1,46 @@
+#cuadro-1 {
+	height: 50px;
+	background-color: red;
+	border-radius: 55px 55px 55px 55px;
+}
+#cuadro-2 {
+	height: 50px;
+
+	border-radius: 55px 55px 55px 55px;
+
+	background-color: blue;
+}
+#cuadro-3 {
+	height: 50px;
+
+	background-color: violet;
+	border-radius: 55px 55px 55px 55px;
+}
+#cuadro-4 {
+	height: 50px;
+	background-color: orange;
+	border-radius: 55px 55px 55px 55px;
+}
+
+.jugando {
+	background-color: rgb(124, 236, 124);
+}
+.perdiste {
+	background-color: red;
+	font-size: xx-large;
+}
+.cuadroClikeado {
+	background-color: rgba(245, 245, 245, 1);
+	opacity: 0.3;
+}
+
+.oculto {
+	display: none;
+}
+
+img {
+	width: 800px;
+	height: 600px;
+	display: block;
+	margin: auto;
+}
