@@ -27,10 +27,10 @@ function cuadroRandomInputMaquina() {
 
 function mostarImagen(id) {
 	document.getElementById(id).classList.remove("oculto");
-	document.getElementById(id).className += "img";
+	document.getElementById(id).classList.add("img-fluid");
 
 	setTimeout(function () {
-		document.getElementById(id).className -= "img";
+		document.querySelector(`#${id}`).classList.remove("img-fluid");
 		document.querySelector(`#${id}`).classList.add("oculto");
 	}, 850);
 }
