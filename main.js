@@ -24,8 +24,22 @@ function cuadroRandomInputMaquina() {
 
 	return variableCuadroRandom;
 }
+
+function mostarImagen(id) {
+	document.getElementById(id).classList.remove("oculto");
+	document.getElementById(id).className += "img";
+
+	setTimeout(function () {
+		document.getElementById(id).className -= "img";
+		document.querySelector(`#${id}`).classList.add("oculto");
+	}, 850);
+}
+
 function jugarRondaMaquina() {
 	bloquearInputUsuario();
+	if (arrayInputMaquina < 1) {
+		mostarImagen("exito");
+	}
 	let jugador = document.querySelector("#jugador");
 	jugador.textContent = "Juega Maquina";
 	arrayInputUsuario = [];
@@ -105,6 +119,7 @@ function pierdeUsuario() {
 	estadoDelJuego.textContent = "Perdiste gordo puto!!! A tu casa pete!!!";
 	let imagen = document.querySelector("#imagen");
 	imagen.classList.remove("oculto");
+	imagen.classList.add("img");
 	bloquearInputUsuario();
 }
 
@@ -120,5 +135,5 @@ document.querySelector("#boton-empezar").onclick = function () {
 	arrayInputUsuario = [];
 	setTimeout(function () {
 		jugarRondaMaquina();
-	}, 1000);
+	}, 2000);
 };
