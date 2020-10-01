@@ -40,6 +40,25 @@ function jugarRondaMaquina() {
 	if (arrayInputMaquina < 1) {
 		mostarImagen("exito");
 	}
+	setTimeout(function () {
+		let jugador = document.querySelector("#jugador");
+		jugador.textContent = "Juega Maquina";
+		arrayInputUsuario = [];
+		let turno = document.querySelector("#turno");
+		turno.textContent = `Turno Nº${1 + arrayInputMaquina.length}`;
+		let inputMaquina = cuadroRandomInputMaquina();
+		arrayInputMaquina.push(inputMaquina);
+		for (let i = 0; i < arrayInputMaquina.length; i++) {
+			setTimeout(function () {
+				marcarCuadro(arrayInputMaquina[i]);
+			}, 1000 * i);
+		}
+		setTimeout(function () {
+			inputUsuario();
+			jugador.textContent = "Juega un gordo teton";
+		}, 1250 * arrayInputMaquina.length);
+		console.log(arrayInputMaquina);
+	}, 1000); /*
 	let jugador = document.querySelector("#jugador");
 	jugador.textContent = "Juega Maquina";
 	arrayInputUsuario = [];
@@ -56,7 +75,7 @@ function jugarRondaMaquina() {
 		inputUsuario();
 		jugador.textContent = "Juega un gordo teton";
 	}, 1250 * arrayInputMaquina.length);
-	console.log(arrayInputMaquina);
+	console.log(arrayInputMaquina);*/
 }
 
 function inputUsuario() {
@@ -135,5 +154,5 @@ document.querySelector("#boton-empezar").onclick = function () {
 	arrayInputUsuario = [];
 	setTimeout(function () {
 		jugarRondaMaquina();
-	}, 2000);
+	}, 1000);
 };
